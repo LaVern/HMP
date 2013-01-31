@@ -1,0 +1,54 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.nuevo.flo"
+    android:versionCode="1"
+    android:versionName="1.0" >
+
+    <uses-sdk
+        android:minSdkVersion="11"
+        android:targetSdkVersion="17" />
+
+    <application
+        android:debuggable="false"
+        android:icon="@drawable/ic_launcher"
+        android:label="@string/app_name"
+        android:theme="@style/AppTheme" >
+     
+
+        <!-- The default activity of the app; displays search results. -->
+        <activity
+            android:name=".FindPrayer"
+            android:launchMode="singleTop" >
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+
+            <!-- Receives the search request. -->
+            <intent-filter>
+                <action android:name="android.intent.action.SEARCH" />
+                <!-- No category needed, because the Intent will specify this class component -->
+            </intent-filter>
+
+            <!-- Points to searchable meta data. -->
+            <meta-data
+                android:name="android.app.searchable"
+                android:resource="@xml/searchable" />
+        </activity>
+
+        <!-- Displays the Prayers. -->
+        <activity android:name=".PrayerActivity" />
+
+        <!-- Provides search s for Prayer needs  and the prayers. -->
+        <provider
+            android:name=".PrayerFound"
+            android:authorities="com.nuevo.flo.PrayerFound" />
+
+        <!-- Points to searchable activity so the whole app can invoke search. -->
+        <meta-data
+            android:name="android.app.default_searchable"
+            android:value=".FindPrayer" />
+    </application>
+
+</manifest>

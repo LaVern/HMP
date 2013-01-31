@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- Layout for Prayer Search Activity. -->
+
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/backg3"
+    android:orientation="vertical" >
+
+    <TextView
+        android:id="@+id/requests"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:background="@android:drawable/title_bar"
+        android:text="@string/search_instructions"
+        android:textColor="?android:textColorPrimary"
+        android:textSize="17sp" />
+
+    <ListView
+        android:id="@+id/prayers"
+        android:layout_width="fill_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1" />
+
+</LinearLayout>
